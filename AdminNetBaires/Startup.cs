@@ -24,6 +24,9 @@ namespace AdminNetBaires
             services.AddMvc();
             services.AddSingleton(provider => Configuration);
             services.AddSingleton<IConfigService, ConfigService>();
+
+            //TODO : Paso 2 - Registro la dependencia / >
+            services.AddSingleton<IMembersService, MembersService>();
         }
 
 

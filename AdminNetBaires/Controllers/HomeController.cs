@@ -1,4 +1,5 @@
 ﻿using AdminNetBaires.Models;
+using AdminNetBaires.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AdminNetBaires.Controllers
@@ -6,15 +7,17 @@ namespace AdminNetBaires.Controllers
 
     public class HomeController : Controller
     {
-        //TODO: Paso 1 - Retornamos un ViewResult / |
-        //Creo Views/Home/Index.cshtml
+        private readonly IMembersService _membersService;
+
+        //TODO : Paso 3 - Inyecto el servicio
+        public HomeController(IMembersService membersService )
+        {
+            _membersService = membersService;
+        }
         public ViewResult Index()
         {
-            //TODO: Paso 3 - Retorno un MemberViewModel / >
-            //Construyo el Index.cshtml
-            var memberTest = new MemberViewModel { Name = "Matias", LastName = "Apellido", Email = "matigas@gmail.com" };
-
-            return View(memberTest);
+            //TODO : Paso 4 - Envio los datos a la vista
+            return View(_membersService.GetAll());
 
         }
     }

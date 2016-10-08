@@ -1,6 +1,6 @@
-﻿@*@using System.Threading.Tasks
+﻿@using System.Threading.Tasks
 @using AdminNetBaires.Models
-@model MemberViewModel*@
+@model IEnumerable<MemberViewModel>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Home</title>
@@ -8,7 +8,15 @@
 <body>
 <h1>Welcome!</h1>
    
-@*<h3>@Model.Email</h3>*@
-    
+<table>
+    @foreach (MemberViewModel item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.LastName</td>
+            <td>@item.Email</td>
+        </tr>
+    }
+</table>
 </body>
 </html>

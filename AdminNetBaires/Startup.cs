@@ -29,7 +29,6 @@ namespace AdminNetBaires
 
 
         public void Configure(IApplicationBuilder app,
-
             IHostingEnvironment env,
             ILoggerFactory loggerFactory,
             IConfigService configService)
@@ -43,8 +42,7 @@ namespace AdminNetBaires
 
             app.UseFileServer();
 
-            //TODO : Paso 1 - Se registran routers manualmente / >
-            //app.UseMvc(ConfigureRoutes);
+            app.UseMvc(ConfigureRoutes);
 
             app.Run(async (context) =>
             {
@@ -56,14 +54,8 @@ namespace AdminNetBaires
 
         private void ConfigureRoutes(IRouteBuilder routeBuilder)
         {
-            //TODO : Paso 2 - Se crea una ruta por defecto /  |*>
-            //Navegamos a : home/index
-            //routeBuilder.MapRoute("Default",
-            //      "{controller}/{action}/{id?}");
-
-            //TODO : Paso 3 - Se crea una ruta por defecto y le asigno valores default  /  |>
-            //routeBuilder.MapRoute("Default",
-            //    "{controller=Home}/{action=Index}/{id?}");
+            routeBuilder.MapRoute("Default",
+                "{controller=Home}/{action=Index}/{id?}");
         }
     }
 }

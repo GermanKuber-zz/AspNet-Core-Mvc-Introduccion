@@ -1,8 +1,8 @@
 # AspNet Core Mvc-Introducción
 
-## Paso 07 - Action results
+## Paso 08 - View
 
-1. Heredo de Controller
-2. Retorno la Interface IActionResult
-3. Retorno ObjectResult
+1. Retornamos un ViewResult
+2. Creo un modelo
+3. Retorno un MemberViewModel
 

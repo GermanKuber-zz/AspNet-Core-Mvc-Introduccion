@@ -1,21 +1,20 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AdminNetBaires.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AdminNetBaires.Controllers
 {
-    //TODO : Paso 1 - Heredo de Controller /  >
+
     public class HomeController : Controller
     {
-        //TODO : Paso 2 - Retorno la Interface IActionResult  /  |*>
-        public IActionResult Index()
-        //TODO : Paso 3 - Implemento ObjectResult  /  |
-        //public ObjectResult Index()
+        //TODO: Paso 1 - Retornamos un ViewResult / |
+        //Creo Views/Home/Index.cshtml
+        public ViewResult Index()
         {
-            //Paso 2
-            return Content("Hello World !! - Desde un controller de Mvc!!");
+            //TODO: Paso 3 - Retorno un MemberViewModel / >
+            //Construyo el Index.cshtml
+            var memberTest = new MemberViewModel { Name = "Matias", LastName = "Apellido", Email = "matigas@gmail.com" };
 
-            //Paso 3
-            //return new ObjectResult(new { Nombre = "Matias", Facultad = "UTN", Email = "matigas@gmail.com" });
-
+            return View(memberTest);
 
         }
     }

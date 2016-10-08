@@ -1,4 +1,4 @@
-{
+    {
   "dependencies": {
     "Microsoft.NETCore.App": {
       "version": "1.0.1",
@@ -8,7 +8,10 @@
     "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0",
     "Microsoft.AspNetCore.Server.Kestrel": "1.0.1",
     "Microsoft.Extensions.Logging.Console": "1.0.0",
-    "Microsoft.Extensions.Configuration.Json": "1.1.0-alpha1-22362"
+    "Microsoft.Extensions.Configuration.Json": "1.1.0-alpha1-22362",
+    "Microsoft.AspNet.IISPlatformHandler": "1.0.0-rc1-final",
+    "Microsoft.AspNet.Diagnostics": "1.0.0-rc1-final",
+    "Microsoft.AspNetCore.StaticFiles": "1.0.0"
   },
 
   "tools": {

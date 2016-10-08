@@ -2,21 +2,18 @@
 
 namespace AdminNetBaires.Services
 {
-   
-
-    //TODO : Paso 1 - Creo un servicio de configuracion
     public class ConfigService : IConfigService
     {
-        private readonly string _greeting;
+        private readonly string _saludo;
 
         public ConfigService(IConfiguration configuration)
         {
-            _greeting = $"{configuration["hello"]} - Pasando por mi servicio {nameof(ConfigService)}";
+            _saludo = $"{configuration["hello"]} - Pasando por mi servicio {nameof(ConfigService)}";
         }
 
         public string GetHello()
         {
-            return _greeting;
+            return _saludo;
         }
     }
 }

@@ -3,10 +3,10 @@ using AdminNetBaires.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using IApplicationBuilder = Microsoft.AspNetCore.Builder.IApplicationBuilder;
 
 namespace AdminNetBaires
 {
@@ -15,14 +15,13 @@ namespace AdminNetBaires
         public IConfiguration Configuration { get; set; }
         public void ConfigureServices(IServiceCollection services)
         {
-          
+
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                           .AddJsonFile("appsettings.json");
             Configuration = builder.Build();
 
-            //TODO : Paso 5 - Agrego los servicios de Mvc
-            //services.AddMvc();
+            services.AddMvc();
             services.AddSingleton(provider => Configuration);
             services.AddSingleton<IConfigService, ConfigService>();
         }
@@ -31,7 +30,7 @@ namespace AdminNetBaires
 
         public void Configure(IApplicationBuilder app,
 
-            IHostingEnvironment env, 
+            IHostingEnvironment env,
             ILoggerFactory loggerFactory,
             IConfigService configService)
         {
@@ -41,23 +40,30 @@ namespace AdminNetBaires
             {
                 app.UseDeveloperExceptionPage();
             }
-         
+
             app.UseFileServer();
 
-            //TODO : Paso 3 - Agrego el  middleware de Mvc
-            //app.UseMvcWithDefaultRoute();
-
-
-            //TODO : Paso 4 - Elimino el Index.html
-
+            //TODO : Paso 1 - Se registran routers manualmente / >
+            //app.UseMvc(ConfigureRoutes);
 
             app.Run(async (context) =>
             {
                 var saludo = configService.GetHello();
                 await context.Response.WriteAsync(saludo);
             });
-            //TODO : Paso 1 - Install-Package Microsoft.AspNetCore.Mvc
 
+        }
+
+        private void ConfigureRoutes(IRouteBuilder routeBuilder)
+        {
+            //TODO : Paso 2 - Se crea una ruta por defecto /  |*>
+            //Navegamos a : home/index
+            //routeBuilder.MapRoute("Default",
+            //      "{controller}/{action}/{id?}");
+
+            //TODO : Paso 3 - Se crea una ruta por defecto y le asigno valores default  /  |>
+            //routeBuilder.MapRoute("Default",
+            //    "{controller=Home}/{action=Index}/{id?}");
         }
     }
 }

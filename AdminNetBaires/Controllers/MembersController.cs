@@ -47,18 +47,28 @@ namespace AdminNetBaires.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public  IActionResult Create([Bind("Id,Calification,Email,ExternaId,LastName,Name")] Member member)
+        public  IActionResult Create([Bind("Id,Calification,Email,ExternaId,LastName,Name")] MemberViewModel member)
         {
             //TODO : Paso 2 - Creo Metodo de Post
+        
             if (ModelState.IsValid)
             {
-                this._membersService.Create(member);
+                var newObj = new Member
+                {
+                    Email = member.Email,
+                    LastName = member.LastName,
+                    Name = member.Name,
+                    Calification = member.Calification,
+                    ExternaId = member.ExternaId
+                };
+                this._membersService.Create(newObj);
+                return RedirectToAction("Details", new { id = newObj.Id });
               
-                return RedirectToAction("Index");
             }
             return View(member);
             //TODO: Paso 5 - Implemento la vista
             //Install-Package Microsoft.AspNetCore.Mvc.TagHelpers
+            //Genero _ViewImports.cshtml
         }
     }
 }

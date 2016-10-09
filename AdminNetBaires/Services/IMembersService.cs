@@ -7,5 +7,6 @@ namespace AdminNetBaires.Services
     {
         IEnumerable<Member> GetAll();
         Member GetById(int id);
+        void Create(Member member);
     }
 }

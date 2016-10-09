@@ -6,8 +6,9 @@ namespace AdminNetBaires.Services
 {
     public class MembersService : IMembersService
     {
-        readonly List<Member> _members;
-        public MembersService()
+        //TODO: Paso 3 - Miembro static
+        static readonly List<Member> _members;
+        static MembersService()
         {
             _members = new List<Member>
             {
@@ -24,10 +25,16 @@ namespace AdminNetBaires.Services
 
         public Member GetById(int id)
         {
-            //TODO : Paso 7 - Implemento el servicio para obtener por id / |>
-            return this._members.FirstOrDefault(x => x.Id == id);
+
+            return _members.FirstOrDefault(x => x.Id == id);
         }
 
-        
+        public void Create(Member member)
+        {
+            //TODO: Paso 4 - Implemento la interface
+            member.Id = _members.Max(r => r.Id) + 1;
+            _members.Add(member);
+         
+        }
     }
 }

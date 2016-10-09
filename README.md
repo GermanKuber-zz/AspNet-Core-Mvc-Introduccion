@@ -1,17 +1,13 @@
 # AspNet Core Mvc-Introducción
 
-## Paso 11 - 
+## Paso 12 - 
 
-1. Creo el controlador de members
-2. Pruebo mi controller
-    * Navego : /members/details/3
-    * Navego : /members/details?id=2
-3. Retorno un IActionResult 
-4. Inyecto mi servicio
-5. Obtengo el member
-6. Implemento la Vista
-7. Implemento el servicio para obtener por id
-8. Controlo error
+1. Creo Metodo de Get
+2. Creo Metodo de Post
+3. Miembro static
+4. Implemento la interface
+5. Implemento la vista
+
 
 
 

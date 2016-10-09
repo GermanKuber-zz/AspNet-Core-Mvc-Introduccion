@@ -1,0 +1,57 @@
+﻿@using System.Threading.Tasks
+@using AdminNetBaires.Entities
+@model Member
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <h4>Member</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly"></div>
+        <div>
+            <label asp-for="Calification" ></label>
+            <div class="col-md-10">
+                <input asp-for="Calification" class="form-control" />
+                <span asp-validation-for="Calification" />
+            </div>
+        </div>
+        <div>
+            <label asp-for="Email" ></label>
+            <div class="col-md-10">
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" />
+            </div>
+        </div>
+        <div >
+            <label asp-for="ExternaId" ></label>
+            <div class="col-md-10">
+                <input asp-for="ExternaId"  />
+                <span asp-validation-for="ExternaId" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="LastName" ></label>
+            <div class="col-md-10">
+                <input asp-for="LastName" />
+                <span asp-validation-for="LastName"  />
+            </div>
+        </div>
+        <div >
+            <label asp-for="Name" ></label>
+            <div >
+                <input asp-for="Name"  />
+                <span asp-validation-for="Name"  />
+            </div>
+        </div>
+        <div>
+            <div >
+                <input type="submit" value="Create"  />
+            </div>
+        </div>
+    </div>
+</form>

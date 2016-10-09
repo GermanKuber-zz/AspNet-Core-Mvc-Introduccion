@@ -5,7 +5,7 @@ namespace AdminNetBaires.ViewModels
     
     public class MemberViewModel
     {
-        //TODO : Paso 2 - Se agregan anotaciones
+   
         [Required,MaxLength(50)]
         [Display(Name = "Nombre")]
         public string Name { get; set; }

@@ -1,10 +1,12 @@
 # AspNet Core Mvc-Introducción
 
-## Paso 13 - Se agregan anotaciones y validaciones
+## Paso 14 - 
 
-1. Renombro mi implementacion del serviio a MembersMemoryService
-2. Se agregan anotaciones
-
+1. Instalo packages
+2. Creo un contexto de EF
+3. Creo una nueva implementacion de IMembersService
+4. Referencio los servicios de EF
+5. Registro mi nueva implementacion de IMembersService
 
 
 

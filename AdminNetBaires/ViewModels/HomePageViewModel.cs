@@ -3,12 +3,9 @@ using AdminNetBaires.Entities;
 
 namespace AdminNetBaires.ViewModels
 {
-
-    //TODO : Paso 1 - Creo mi ViewModel
-    public class HomePageViewModel
+    public class MembersIndexViewModel
     {
         public IEnumerable<Member> Members { get; set; }
 
-        public string Message { get; set; }
     }
 }

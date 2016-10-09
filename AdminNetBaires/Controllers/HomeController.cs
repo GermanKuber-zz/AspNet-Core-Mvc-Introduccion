@@ -10,7 +10,6 @@ namespace AdminNetBaires.Controllers
         private readonly IMembersService _membersService;
         private readonly IConfigService _configService;
 
-        //TODO : Paso 3 - Inyecto mi config Service
         public HomeController(IMembersService membersService, IConfigService configService )
         {
             _membersService = membersService;
@@ -18,17 +17,8 @@ namespace AdminNetBaires.Controllers
         }
         public ViewResult Index()
         {
-            //TODO : Paso 4 - Retorno un HomePageViewModel
-          
-            var homeViewModel = new HomePageViewModel
-            {
-                Members = _membersService.GetAll(),
-                Message = this._configService.GetHello()
-
-            };
-            //TODO : Paso 5 - Construyo Vista
-            return View(homeViewModel);
-
+        
+            return View();
         }
     }
 }

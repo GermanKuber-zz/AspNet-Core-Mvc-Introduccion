@@ -2,7 +2,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AdminNetBaires.Entities
 {
-    //TODO : Paso 2 - Genero mi primera Entidad
     public class Member
     {
         public int Id { get; set; }

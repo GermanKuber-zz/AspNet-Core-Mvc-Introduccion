@@ -1,23 +1,13 @@
-﻿@using System.Threading.Tasks
-@using AdminNetBaires.Entities
-@using AdminNetBaires.ViewModels
-@model HomePageViewModel
+﻿
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Home</title>
 </head>
 <body>
 <h1>Welcome!</h1>
-<h3>@Model.Message</h3>
+
 <table>
-    @foreach (Member item in Model.Members)
-    {
-        <tr>
-            <td>@item.Name</td>
-            <td>@item.LastName</td>
-            <td>@item.Email</td>
-        </tr>
-    }
+
 </table>
 </body>
 </html>

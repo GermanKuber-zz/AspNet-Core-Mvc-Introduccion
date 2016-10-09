@@ -1,10 +1,17 @@
 # AspNet Core Mvc-Introducción
 
-## Paso 10 - Model vs ViewModel
+## Paso 11 - 
 
-1. Creo mi ViewModel
-2. Genero mi primera Entidad
-3. Inyecto mi config Service
-4. Retorno un HomePageViewModel
-5. Implemento Vista
+1. Creo el controlador de members
+2. Pruebo mi controller
+    * Navego : /members/details/3
+    * Navego : /members/details?id=2
+3. Retorno un IActionResult 
+4. Inyecto mi servicio
+5. Obtengo el member
+6. Implemento la Vista
+7. Implemento el servicio para obtener por id
+8. Controlo error
+
+
 

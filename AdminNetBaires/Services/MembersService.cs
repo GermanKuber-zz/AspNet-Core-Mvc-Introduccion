@@ -1,19 +1,19 @@
 using System.Collections.Generic;
+using System.Linq;
 using AdminNetBaires.Entities;
-using AdminNetBaires.ViewModels;
 
 namespace AdminNetBaires.Services
 {
     public class MembersService : IMembersService
     {
-        
+        readonly List<Member> _members;
         public MembersService()
         {
             _members = new List<Member>
             {
-                new  Member { Name = "Matias", LastName = "Apellido", Email = "matigas@gmail.com" },
-                new  Member { Name = "Federico", LastName = "Marin", Email = "fedemarin@gmail.com" },
-                new  Member { Name = "Maria", LastName = "Paz", Email = "mpaz@gmail.com" }
+                new  Member { Id = 1,Name = "Matias", LastName = "Apellido", Email = "matigas@gmail.com" },
+                new  Member { Id = 2,Name = "Federico", LastName = "Marin", Email = "fedemarin@gmail.com" },
+                new  Member { Id = 3,Name = "Maria", LastName = "Paz", Email = "mpaz@gmail.com" }
             };
         }
 
@@ -22,6 +22,12 @@ namespace AdminNetBaires.Services
             return _members;
         }
 
-        List<Member> _members;
+        public Member GetById(int id)
+        {
+            //TODO : Paso 7 - Implemento el servicio para obtener por id / |>
+            return this._members.FirstOrDefault(x => x.Id == id);
+        }
+
+        
     }
 }

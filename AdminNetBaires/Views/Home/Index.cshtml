@@ -1,15 +1,16 @@
 ﻿@using System.Threading.Tasks
-@using AdminNetBaires.Models
-@model IEnumerable<MemberViewModel>
+@using AdminNetBaires.Entities
+@using AdminNetBaires.ViewModels
+@model HomePageViewModel
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Home</title>
 </head>
 <body>
 <h1>Welcome!</h1>
-   
+<h3>@Model.Message</h3>
 <table>
-    @foreach (MemberViewModel item in Model)
+    @foreach (Member item in Model.Members)
     {
         <tr>
             <td>@item.Name</td>

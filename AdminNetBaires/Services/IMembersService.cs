@@ -1,10 +1,11 @@
 using System.Collections.Generic;
-using AdminNetBaires.Models;
+using AdminNetBaires.Entities;
+using AdminNetBaires.ViewModels;
 
 namespace AdminNetBaires.Services
 {
     public interface IMembersService
     {
-        IEnumerable<MemberViewModel> GetAll();
+        IEnumerable<Member> GetAll();
     }
 }

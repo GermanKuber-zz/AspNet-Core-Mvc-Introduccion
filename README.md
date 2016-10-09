@@ -1,6 +1,6 @@
 # AspNet Core Mvc-Introducción
 
-## Paso 12 - Se crea un member
+## Paso 12 - Se agrega metodo post para crear un memeber
 
 1. Creo Metodo de Get
 2. Creo Metodo de Post

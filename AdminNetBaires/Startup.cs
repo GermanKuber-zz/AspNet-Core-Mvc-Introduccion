@@ -26,7 +26,7 @@ namespace AdminNetBaires
             services.AddSingleton<IConfigService, ConfigService>();
 
        
-            services.AddSingleton<IMembersService, MembersService>();
+            services.AddSingleton<IMembersService, MembersMemoryService>();
         }
 
 

@@ -40,16 +40,17 @@ namespace AdminNetBaires.Controllers
        
             return View(result);
         }
+        [HttpGet]
         public IActionResult Create()
         {
-            //TODO : Paso 1 - Creo Metodo de Get
+            
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public  IActionResult Create([Bind("Id,Calification,Email,ExternaId,LastName,Name")] MemberViewModel member)
         {
-            //TODO : Paso 2 - Creo Metodo de Post
+          
         
             if (ModelState.IsValid)
             {
@@ -65,10 +66,8 @@ namespace AdminNetBaires.Controllers
                 return RedirectToAction("Details", new { id = newObj.Id });
               
             }
-            return View(member);
-            //TODO: Paso 5 - Implemento la vista
-            //Install-Package Microsoft.AspNetCore.Mvc.TagHelpers
-            //Genero _ViewImports.cshtml
+            return View();
+         
         }
     }
 }

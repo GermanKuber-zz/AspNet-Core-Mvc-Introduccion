@@ -2,17 +2,27 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AdminNetBaires.ViewModels
 {
-    //TODO: Paso 6 - Genero MemberViewModel
+    
     public class MemberViewModel
     {
+        //TODO : Paso 2 - Se agregan anotaciones
+        [Required,MaxLength(50)]
         [Display(Name = "Nombre")]
         public string Name { get; set; }
+
+        [Required, MaxLength(50)]
         [Display(Name = "Apellido")]
         public string LastName { get; set; }
-        [Display(Name = "Email")]
+
+        [Required, Display(Name = "Email")]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
-        [Display(Name = "Id Externo")]
+
+
+        [Required, MaxLength(25), Display(Name = "Id Externo")]
+
         public string ExternaId { get; set; }
+
         public int Calification { get; set; }
 
     }

@@ -4,11 +4,12 @@ using AdminNetBaires.Entities;
 
 namespace AdminNetBaires.Services
 {
-    public class MembersService : IMembersService
+    //TODO : Paso 1 - Renombro mi implementacion del serviio a MembersMemoryService
+    public class MembersMemoryService : IMembersService
     {
-        //TODO: Paso 3 - Miembro static
+
         static readonly List<Member> _members;
-        static MembersService()
+        static MembersMemoryService()
         {
             _members = new List<Member>
             {
@@ -31,10 +32,9 @@ namespace AdminNetBaires.Services
 
         public void Create(Member member)
         {
-            //TODO: Paso 4 - Implemento la interface
             member.Id = _members.Max(r => r.Id) + 1;
             _members.Add(member);
-         
+
         }
     }
 }

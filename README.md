@@ -1,6 +1,6 @@
 # AspNet Core Mvc-Introducción
 
-## Paso 15 - 
+## Paso 15 - Implemento edit
 
 1. Se crea _ViewStart.cshtml
 2. Se elimina la referencia Layout = "~/Views/Shared/_Layout.cshtml" del archivo Create.cshtml
@@ -11,4 +11,5 @@
 7. Creo un constructor y seteo los valores 
 8. Genero un metodo post para la edicion
 9. Implemento el metodo update
+10. Se agrega validacion al External ID
 

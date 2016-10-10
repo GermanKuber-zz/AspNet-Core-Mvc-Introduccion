@@ -19,7 +19,13 @@
     "Microsoft.AspNetCore.Razor.Tools": {
       "version": "1.0.0-preview2-final",
       "type": "build"
+    },
+    "Microsoft.EntityFrameworkCore.Sqlite": "1.0.1",
+    "Microsoft.EntityFrameworkCore.Design": {
+      "version": "1.0.0-preview2-final",
+      "type": "build"
     }
+
   },
   "commands": {
     "web": "Microsoft.AspNet.Server.Kestrel",

@@ -13,6 +13,10 @@ namespace AdminNetBaires
     public class Startup
     {
 
+        //TODO : Paso 1 - Instalo paquetes
+        //Install-Package Microsoft.EntityFrameworkCore.Sqlite
+        //Agrego Microsoft.EntityFrameworkCore.Design en el project.json
+        //Agrego Microsoft.EntityFrameworkCore.Tools
 
         public IConfiguration Configuration { get; set; }
         public void ConfigureServices(IServiceCollection services)
@@ -29,7 +33,7 @@ namespace AdminNetBaires
             services.AddSingleton(provider => Configuration);
             services.AddSingleton<IConfigService, ConfigService>();
 
-         
+
             services.AddSingleton<IMembersService, MembersMemoryService>();
         }
 

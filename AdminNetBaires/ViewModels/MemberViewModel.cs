@@ -6,7 +6,6 @@ namespace AdminNetBaires.ViewModels
     
     public class MemberViewModel
     {
-        //TODO : Paso 2 - Agergo la propieda Id
 
         public string Id { get; set; }
 
@@ -14,7 +13,7 @@ namespace AdminNetBaires.ViewModels
         [Display(Name = "Nombre")]
         public string Name { get; set; }
 
-        //TODO : Paso 1 - Agergo propieda de imagen
+
         [Required, MaxLength(150)]
         [Display(Name = "Imagen")]
         public string Image { get; set; }

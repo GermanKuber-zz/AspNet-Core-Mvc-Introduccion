@@ -2,12 +2,11 @@
 @using AdminNetBaires.Entities
 @using AdminNetBaires.ViewModels
 @model MembersIndexViewModel
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>Home</title>
-</head>
-<body>
-<h1>Lista de Members</h1>
+@{
+    ViewBag.Title = "Lista de Members";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
 
 <table>
     @foreach (Member item in Model.Members)
@@ -20,5 +19,8 @@
         </tr>
     }
 </table>
-</body>
-</html>
+
+@*@section footer
+{
+    <h2>Footer Desde la pagina</h2>
+}*@

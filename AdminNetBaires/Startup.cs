@@ -37,7 +37,7 @@ namespace AdminNetBaires
             services.AddDbContext<NetBairesContext>(
                     options => options.UseSqlite(Configuration["database:connection"]));
             services.AddMvc();
-            //TODO : Paso 8 - Agrego la configuracion database al appsettings.json
+    
             services.AddSingleton(provider => Configuration);
 
             services.AddSingleton<IConfigService, ConfigService>();
@@ -77,5 +77,8 @@ namespace AdminNetBaires
             routeBuilder.MapRoute("Default",
                 "{controller=Home}/{action=Index}/{id?}");
         }
+
+        //TODO : Paso 10 - Creo una migracion : dotnet ef migrations add MyFirstMigration
+        //TODO : Paso 11 - Actualizo/Creo la DB: dotnet ef database update --verbose
     }
 }

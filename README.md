@@ -15,4 +15,7 @@
 7. Registro los servicios de EF, y le paso la cadena de conexion
 8. Agrego la configuracion database al appsettings.json
 9. Modifico el servicio a utilizar
+10. Creo una migracion : dotnet ef migrations add MyFirstMigration
+11. Actualizo/Creo la DB: dotnet ef database update --verbose
+
 

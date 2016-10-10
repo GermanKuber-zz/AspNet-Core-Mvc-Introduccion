@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using AdminNetBaires.Context;
 using AdminNetBaires.Entities;
 
 namespace AdminNetBaires.Services
@@ -8,7 +7,7 @@ namespace AdminNetBaires.Services
     public class MembersMemoryService : IMembersService
     {
 
-       private static readonly List<Member> Members;
+        private static readonly List<Member> Members;
         static MembersMemoryService()
         {
             Members = new List<Member>
@@ -46,41 +45,6 @@ namespace AdminNetBaires.Services
         {
             Members.Remove(member);
             Members.Add(member);
-        }
-    }
-
-
-    public class MembersSqlLiteService : IMembersService
-    {
-        //TODO : Paso 4 - Agrego nuevo servicio de Members contra Sql
-        private readonly NetBairesContext _netBairesContext;
-
-    
-
-    public    MembersSqlLiteService(NetBairesContext netBairesContext)
-        {
-            _netBairesContext = netBairesContext;
-        }
-
-        public IEnumerable<Member> GetAll()
-        {
-            return _netBairesContext.Members.ToList();
-        }
-
-        public Member GetById(int id)
-        {
-
-            return _netBairesContext.Members.FirstOrDefault(x => x.Id == id);
-        }
-
-        public void Create(Member member)
-        {
-            _netBairesContext.Members.Add(member);
-        }
-
-        public int Commit()
-        {
-            return _netBairesContext.SaveChanges();
         }
     }
 }

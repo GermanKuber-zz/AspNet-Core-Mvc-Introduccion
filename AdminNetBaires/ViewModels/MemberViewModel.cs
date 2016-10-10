@@ -6,10 +6,18 @@ namespace AdminNetBaires.ViewModels
     
     public class MemberViewModel
     {
-   
+        //TODO : Paso 2 - Agergo la propieda Id
+
+        public string Id { get; set; }
+
         [Required,MaxLength(50)]
         [Display(Name = "Nombre")]
         public string Name { get; set; }
+
+        //TODO : Paso 1 - Agergo propieda de imagen
+        [Required, MaxLength(150)]
+        [Display(Name = "Imagen")]
+        public string Image { get; set; }
 
         [Required, MaxLength(50)]
         [Display(Name = "Apellido")]
@@ -21,7 +29,6 @@ namespace AdminNetBaires.ViewModels
 
 
         [Required, MaxLength(25), Display(Name = "Id Externo")]
-        //TODO : Paso 10 - Se agrega validacion al External ID
         [RegularExpression(@"[^\s]+")]
 
         public string ExternaId { get; set; }
@@ -31,13 +38,13 @@ namespace AdminNetBaires.ViewModels
 
         public MemberViewModel(Member member)
         {
-            //TODO : Paso 07 - Creo un constructor y seteo los valores 
             this.Name = member.Name;
             this.LastName = member.LastName;
             this.Email = member.Email;
             this.ExternaId = member.ExternaId;
             this.Calification = member.Calification;
-
+            this.Image = member.Image;
+            this.Id = member.Id.ToString();
         }
 
         public MemberViewModel()

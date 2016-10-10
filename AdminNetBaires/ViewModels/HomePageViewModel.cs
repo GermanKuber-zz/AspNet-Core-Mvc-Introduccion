@@ -5,7 +5,7 @@ namespace AdminNetBaires.ViewModels
 {
     public class MembersIndexViewModel
     {
-        public IEnumerable<Member> Members { get; set; }
+        public IEnumerable<MemberViewModel> Members { get; set; }
 
     }
 }

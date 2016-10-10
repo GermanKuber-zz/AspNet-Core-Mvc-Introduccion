@@ -29,6 +29,15 @@
             @Html.DisplayFor(model => model.ExternaId)
         </dd>
         <dt>
+          Imagen
+        </dt>
+        <dd>
+            <img src="@Model.Image"
+                 style="width: 200px"
+                 alt="Image"
+                 asp-append-version="true" />
+        </dd>
+        <dt>
             @Html.DisplayNameFor(model => model.LastName)
         </dt>
         <dd>

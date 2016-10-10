@@ -1,4 +1,5 @@
-﻿using AdminNetBaires.Entities;
+﻿using System.Linq;
+using AdminNetBaires.Entities;
 using AdminNetBaires.Services;
 using AdminNetBaires.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -21,7 +22,7 @@ namespace AdminNetBaires.Controllers
 
             var homeViewModel = new MembersIndexViewModel
             {
-                Members = _membersService.GetAll()
+                Members = _membersService.GetAll()?.Select(x=> new MemberViewModel(x))
 
             };
             return View(homeViewModel);
@@ -47,7 +48,7 @@ namespace AdminNetBaires.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("Id,Calification,Email,ExternaId,LastName,Name")] MemberViewModel member)
+        public IActionResult Create([Bind("Id,Calification,Email,ExternaId,LastName,Name,Image")] MemberViewModel member)
         {
 
 
@@ -59,7 +60,8 @@ namespace AdminNetBaires.Controllers
                     LastName = member.LastName,
                     Name = member.Name,
                     Calification = member.Calification,
-                    ExternaId = member.ExternaId
+                    ExternaId = member.ExternaId,
+                    Image = member.Image
                 };
                 this._membersService.Create(newObj);
                 return RedirectToAction("Details", new { id = newObj.Id });
@@ -69,11 +71,9 @@ namespace AdminNetBaires.Controllers
 
         }
 
-        //TODO : Paso 05 - Creo la action de edit y retorno la vista
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            //TODO : Paso 06 - Creo la vista
             var model = _membersService.GetById(id);
             if (model == null)
             {
@@ -86,13 +86,13 @@ namespace AdminNetBaires.Controllers
         [HttpPost]
         public IActionResult Edit(int id, MemberViewModel model)
         {
-            //TODO : Paso 08 - Genero un metodo post para la edicion
             var member = _membersService.GetById(id);
             if (member != null && ModelState.IsValid)
             {
                 member.Name = model.Name;
                 member.LastName = model.LastName;
                 member.Email = model.Email;
+                member.Image = model.Image;
                 member.ExternaId = model.ExternaId;
                 member.Calification = model.Calification;
                 _membersService.Update(member);

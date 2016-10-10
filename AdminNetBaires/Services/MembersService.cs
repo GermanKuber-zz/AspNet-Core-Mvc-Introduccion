@@ -12,9 +12,9 @@ namespace AdminNetBaires.Services
         {
             Members = new List<Member>
             {
-                new  Member { Id = 1,Name = "Matias", LastName = "Apellido", Email = "matigas@gmail.com" },
-                new  Member { Id = 2,Name = "Federico", LastName = "Marin", Email = "fedemarin@gmail.com" },
-                new  Member { Id = 3,Name = "Maria", LastName = "Paz", Email = "mpaz@gmail.com" }
+                new  Member { Id = 1,Name = "Matias", LastName = "Apellido", Email = "matigas@gmail.com", Image = "http://media.gettyimages.com/videos/facial-expression-of-angry-adult-man-on-blue-background-video-id502798246?s=640x640"},
+                new  Member { Id = 2,Name = "Federico", LastName = "Marin", Email = "fedemarin@gmail.com", Image = "http://hairstyleonpoint.com/wp-content/uploads/2015/04/indigobloomdesigns-blogspot-com-OVAL.jpg"},
+                new  Member { Id = 3,Name = "Maria", LastName = "Paz", Email = "mpaz@gmail.com" , Image = "http://media.gettyimages.com/videos/businessman-showing-red-business-card-video-id472920593?s=640x640"}
             };
         }
 
@@ -38,7 +38,6 @@ namespace AdminNetBaires.Services
 
         public void Update(Member member)
         {
-            //TODO : Paso 09 - Implemento el metodo update
             Members.Remove(member);
             Members.Add(member);
         }

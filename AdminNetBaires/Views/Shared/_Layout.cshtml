@@ -7,11 +7,15 @@
 </head>
 <body>
 <h1>Layout Master</h1>
-<br/>
+
+    <h3>@await Component.InvokeAsync("Message")</h3>
 <h2>@ViewData["Title"]</h2>
-    <div>
-        @RenderBody()
-    </div>
+      
+
+<div>
+    @RenderBody()
+</div>
+
     <footer>
         @RenderSection("footer", false)
     </footer>

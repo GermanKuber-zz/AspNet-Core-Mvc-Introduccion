@@ -1,0 +1,18 @@
+﻿@model AdminNetBaires.ViewModels.MemberViewModel
+<section>
+    <h3>@Model.Name</h3>
+    <div>
+        <img src="@Model.Image"
+            style="width: 200px"
+              alt="Image"
+             asp-append-version="true" />
+
+    </div>
+    <div>
+        @Model.Email
+    </div>
+    <div>
+        <a asp-action="Details" asp-route-id="@Model.Id">Details</a>
+        <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+    </div>
+</section>

@@ -1,15 +1,11 @@
 # AspNet Core Mvc-Introducción
 
-## Paso 15 - Implemento edit
+## Paso 16 - Implemento Partial View y ViewComponent
 
-1. Se crea _ViewStart.cshtml
-2. Se elimina la referencia Layout = "~/Views/Shared/_Layout.cshtml" del archivo Create.cshtml
-3. Creo _ViewImports.cshtml
-4. Revisar los tag helpers
-5. Creo la action de edit y retorno la vista
-6. Creo la vista
-7. Creo un constructor y seteo los valores 
-8. Genero un metodo post para la edicion
-9. Implemento el metodo update
-10. Se agrega validacion al External ID
-
+1. Genero una vista parcial _Summary
+2. Agergo la propiedad Image
+    * Actualizo el campo imagen en todas las vistas
+3. Agergo la propieda Id
+4. Implemento una clase ViewModel
+5. Creo Shared/Components/Message/Default.cshtml
+6. Llamo a mi Component desde _Layout

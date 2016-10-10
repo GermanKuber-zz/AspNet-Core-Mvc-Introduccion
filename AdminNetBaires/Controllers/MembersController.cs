@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AdminNetBaires.Controllers
 {
-
     public class MembersController : Controller
     {
         private readonly IMembersService _membersService;
@@ -64,6 +63,7 @@ namespace AdminNetBaires.Controllers
                     Image = member.Image
                 };
                 this._membersService.Create(newObj);
+                this._membersService.Commit();
                 return RedirectToAction("Details", new { id = newObj.Id });
 
             }
@@ -95,7 +95,8 @@ namespace AdminNetBaires.Controllers
                 member.Image = model.Image;
                 member.ExternaId = model.ExternaId;
                 member.Calification = model.Calification;
-                _membersService.Update(member);
+                //TODO : Paso 6 - Consumo el metodo commit
+                _membersService.Commit();
 
                 return RedirectToAction("Details", new { id = member.Id });
             }

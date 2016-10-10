@@ -8,6 +8,7 @@ namespace AdminNetBaires.Services
         IEnumerable<Member> GetAll();
         Member GetById(int id);
         void Create(Member member);
-        void Update(Member member);
+        //TODO : Paso 5 - Agrego nuevo metodo commit para salvar los cambios
+        int Commit( );
     }
 }

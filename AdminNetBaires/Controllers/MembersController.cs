@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using AdminNetBaires.Entities;
+﻿using AdminNetBaires.Entities;
 using AdminNetBaires.Services;
 using AdminNetBaires.ViewModels;
 using Microsoft.AspNetCore.Mvc;

@@ -1,5 +1,4 @@
 ﻿using AdminNetBaires.Services;
-using AdminNetBaires.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AdminNetBaires.Controllers

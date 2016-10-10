@@ -1,5 +1,3 @@
-using System.ComponentModel.DataAnnotations;
-
 namespace AdminNetBaires.Entities
 {
     public class Member

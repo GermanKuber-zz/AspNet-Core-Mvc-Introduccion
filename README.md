@@ -1,12 +1,11 @@
 # AspNet Core Mvc-Introducción
 
-## Paso 14 - 
+## Paso 14 - Se implementa _Layout
 
-1. Instalo packages
-2. Creo un contexto de EF
-3. Creo una nueva implementacion de IMembersService
-4. Referencio los servicios de EF
-5. Registro mi nueva implementacion de IMembersService
+1. Creo el archivo _Layout.cshtml
+2. Muevo el html de la vista Index.cshtml a _Layout.cshtml
+3. Creo sección de footer
+4. Implemento sección de footer
 
 
 

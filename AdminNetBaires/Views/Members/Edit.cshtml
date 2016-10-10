@@ -1,10 +1,10 @@
 ﻿@model AdminNetBaires.ViewModels.MemberViewModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = $"Edit {Model.Name}";
 }
 
-<form asp-action="Create">
+<form asp-action="Edit" method="post">
     <div class="form-horizontal">
         <h4>Member</h4>
         <hr />
@@ -47,7 +47,7 @@
         </div>
         <div>
             <div>
-                <input type="submit" value="Create" />
+                <input type="submit" value="Edit" />
             </div>
         </div>
     </div>

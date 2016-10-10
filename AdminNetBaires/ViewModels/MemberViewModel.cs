@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using AdminNetBaires.Entities;
 
 namespace AdminNetBaires.ViewModels
 {
@@ -20,10 +21,28 @@ namespace AdminNetBaires.ViewModels
 
 
         [Required, MaxLength(25), Display(Name = "Id Externo")]
+        //TODO : Paso 10 - Se agrega validacion al External ID
+        [RegularExpression(@"[^\s]+")]
 
         public string ExternaId { get; set; }
 
         public int Calification { get; set; }
 
+
+        public MemberViewModel(Member member)
+        {
+            //TODO : Paso 07 - Creo un constructor y seteo los valores 
+            this.Name = member.Name;
+            this.LastName = member.LastName;
+            this.Email = member.Email;
+            this.ExternaId = member.ExternaId;
+            this.Calification = member.Calification;
+
+        }
+
+        public MemberViewModel()
+        {
+            
+        }
     }
 }

@@ -35,5 +35,12 @@ namespace AdminNetBaires.Services
             Members.Add(member);
 
         }
+
+        public void Update(Member member)
+        {
+            //TODO : Paso 09 - Implemento el metodo update
+            Members.Remove(member);
+            Members.Add(member);
+        }
     }
 }

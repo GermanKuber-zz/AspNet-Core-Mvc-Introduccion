@@ -3,10 +3,12 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+    <title>@ViewData["Title"]</title>
 </head>
 <body>
-    <h2>Layout Master</h2>
+<h1>Layout Master</h1>
+<br/>
+<h2>@ViewData["Title"]</h2>
     <div>
         @RenderBody()
     </div>

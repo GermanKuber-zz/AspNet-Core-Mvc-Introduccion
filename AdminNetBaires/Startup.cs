@@ -31,19 +31,19 @@ namespace AdminNetBaires
                           .AddJsonFile("appsettings.json");
             Configuration = builder.Build();
 
-            services.AddMvc();
+            
 
             //TODO : Paso 7 - Registro los servicios de EF, y le paso la cadena de conexion
-            //services.AddEntityFramework()
-            //.AddEntityFrameworkSqlite()
-            //.AddDbContext<NetBairesContext>(
-            //        options => options.UseSqlite(Configuration["database:connection"]));
+            services.AddDbContext<NetBairesContext>(
+                    options => options.UseSqlite(Configuration["database:connection"]));
+            services.AddMvc();
             //TODO : Paso 8 - Agrego la configuracion database al appsettings.json
             services.AddSingleton(provider => Configuration);
+
             services.AddSingleton<IConfigService, ConfigService>();
 
-
-            services.AddSingleton<IMembersService, MembersMemoryService>();
+            //TODO : Paso 9 - Modifico el servicio a utilizar
+            services.AddScoped<IMembersService, MembersSqlLiteService>();
         }
 
 

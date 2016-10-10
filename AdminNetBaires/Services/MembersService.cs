@@ -55,8 +55,9 @@ namespace AdminNetBaires.Services
         //TODO : Paso 4 - Agrego nuevo servicio de Members contra Sql
         private readonly NetBairesContext _netBairesContext;
 
+    
 
-        MembersSqlLiteService(NetBairesContext netBairesContext)
+    public    MembersSqlLiteService(NetBairesContext netBairesContext)
         {
             _netBairesContext = netBairesContext;
         }
